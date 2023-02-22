@@ -4,7 +4,7 @@
     {
         public string ImageTitle { get; set; }
         public string PizzaName { get; set; }
-        public float BasePrice { get; set; }
+        public float BasePrice { get; set; } = 2;
         public bool TomatoeSauce { get; set; }
         public bool Cheese { get; set; }
         public bool Onions { get; set; }
