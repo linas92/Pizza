@@ -1,3 +1,6 @@
+using Pizza.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace Pizza
 {
     public class Program
@@ -5,6 +8,11 @@ namespace Pizza
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnetion"));
+            });
 
             // Add services to the container.
             builder.Services.AddRazorPages();
